@@ -3,7 +3,7 @@
 // @namespace   https://github.com/gslin/open-all-green-row-links-in-sukebei
 // @match       https://sukebei.nyaa.si/*
 // @grant       GM_openInTab
-// @version     0.20220101.1
+// @version     0.20220113.0
 // @author      Gea-Suan Lin <gslin@gslin.com>
 // @description A faster way to open links in sukebei green rows
 // @license     MIT
@@ -40,7 +40,7 @@
     input.setAttribute('style', 'font-size:200%');
     input.setAttribute('type', 'button');
     input.setAttribute('value', 'Open links');
-    tbl.parentElement.prepend(input);
+    tbl.parentElement.appendChild(input);
 
     window.addEventListener('keydown', ev => {
         let aEl = document.activeElement;
