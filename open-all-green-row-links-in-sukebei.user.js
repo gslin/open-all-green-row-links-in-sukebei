@@ -3,7 +3,7 @@
 // @namespace   https://github.com/gslin/open-all-green-row-links-in-sukebei
 // @match       https://sukebei.nyaa.si/*
 // @grant       GM_openInTab
-// @version     0.20230727.2
+// @version     0.20250430.0
 // @author      Gea-Suan Lin <gslin@gslin.com>
 // @description A faster way to open links in sukebei green rows
 // @license     MIT
@@ -31,7 +31,10 @@
       const url = a.getAttribute('href');
 
       setTimeout(() => {
-        GM_openInTab(url, true);
+        GM_openInTab(url, {
+          active: false,
+          insert: false,
+        });
       }, timeout);
       timeout += Math.random() * 100 + 700;
     }
